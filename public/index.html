@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Ego eimi</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="controllers/main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body ng-app="EgoEimi" ng-controller="mainController">
+    <img src="./assets/img/Website-Background.jpg" id="bg" alt="">
+    <div id='main' class="container">
+        <div class="row" id="inputs">
+            <ul>
+              <li>
+                <input type="radio" id="f-option" name="selector" ng-model = "selectedBehavior" ng-value = "gb">
+                <label for="f-option">Olympics Spirit</label>
+                <div class="check"></div>
+              </li>
+              
+              <li>
+                <input type="radio" id="s-option" name="selector" ng-model = "selectedBehavior" ng-value = "bb">
+                <label for="s-option">روح غير مسيحية</label>
+                <div class="check"><div class="inside"></div></div>
+              </li>
+            </ul>
+          <md-input-container  flex-gt-sm id="s">
+          </div>
+          <div class="row" >
+            <div class="col-sm-4" ng-repeat="team in topTeams| orderBy:'-score'" >
+              <div class="thumbnail" >
+                  <img ng-src="assets/img/{{team._id}}.png" ng-click="submit(team._id)">
+                  <div class="caption">
+                    <div class="row">
+                      <div class="col-sm-1" ng-repeat="medal in team.medals" >
+                        <img id = 'medal' ng-src="assets/img/medal.png">
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </body>
+</html>
